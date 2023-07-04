@@ -1,0 +1,201 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>My Page</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			var score = 0;
+			var total = 5;
+			$(".check").click(function() {
+				//alert("Handler for .click() called.");
+				//alert($("input:checked").val());
+				if (this.id == $("input:checked").val()) {
+					score = score + 1;
+				} else {
+					score = score;
+				}
+				//console.log(score);
+				$('#finalscore').html("<h2>Congrats! You got " + score + " out of " + total + " correct!<\/h2>");
+				$('input').attr('checked', false);
+			});
+		});
+	</script>
+	<style>
+		img {
+			text-align: center;
+			width: 100%;
+		}
+	</style>
+</head> 
+<body> 
+
+<div data-role="page" id="page1">
+
+	<div data-role="header">
+		<h1>Animal Quiz</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		
+		<form id="q1">
+			<fieldset data-role="controlgroup">
+				<legend>1. Do penguins live in Antarctica or Africa?</legend>
+					<input type="radio" name="radio-choice" id="radio-choice-1" value="Antarctica" />
+					<label for="radio-choice-1">Antarctica</label>
+			
+					<input type="radio" name="radio-choice" id="radio-choice-2" value="Africa"  />
+					<label for="radio-choice-2">Africa</label>
+			</fieldset>
+		
+			<img src="images/penguin.jpg" alt="penguin" />
+			
+		</form>
+		
+		<a href="#page2" data-role="button" id="Antarctica" class="check">Next</a>
+		
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+<div data-role="page" id="page2">
+
+	<div data-role="header">
+		<h1>Animal Quiz</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		
+		<form id="q2">
+			<fieldset data-role="controlgroup">
+				<legend>2. Do komodo dragons live in China or Indonesia?</legend>
+					<input type="radio" name="radio-choice" id="radio-choice-1" value="China" />
+					<label for="radio-choice-1">China</label>
+			
+					<input type="radio" name="radio-choice" id="radio-choice-2" value="Indonesia"  />
+					<label for="radio-choice-2">Indonesia</label>
+			</fieldset>
+		
+			
+		</form>
+		
+		<img src="images/komodo.jpg" alt="komodo dragons" />
+		
+		<a href="#page3" data-role="button" id="Indonesia" class="check">Next</a>
+		
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+<div data-role="page" id="page3">
+
+	<div data-role="header">
+		<h1>Animal Quiz</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		
+		<form id="q3">
+			<fieldset data-role="controlgroup">
+				<legend>3. Do koalas live in Asia or Australia?</legend>
+					<input type="radio" name="radio-choice" id="radio-choice-1" value="Asia" />
+					<label for="radio-choice-1">Asia</label>
+			
+					<input type="radio" name="radio-choice" id="radio-choice-2" value="Australia"  />
+					<label for="radio-choice-2">Australia</label>
+			</fieldset>
+		
+			
+		</form>
+		
+		<img src="images/koala.jpg" alt="koala" />
+		
+		<a href="#page4" data-role="button" id="Australia" class="check">Next</a>
+		
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+<div data-role="page" id="page4">
+
+	<div data-role="header">
+		<h1>Animal Quiz</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		
+		<form id="q4">
+			<fieldset data-role="controlgroup">
+				<legend>4. Do flamingos live in Wyoming or Miami?</legend>
+					<input type="radio" name="radio-choice" id="radio-choice-1" value="Miami" />
+					<label for="radio-choice-1">Miami</label>
+			
+					<input type="radio" name="radio-choice" id="radio-choice-2" value="Wyoming"  />
+					<label for="radio-choice-2">Wyoming</label>
+			</fieldset>
+		
+			
+		</form>
+		
+		<img src="images/flamingo.jpg" alt="flamingo" />
+		
+		<a href="#page5" data-role="button" id="Miami" class="check">Next</a>
+		
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+
+<div data-role="page" id="page5">
+
+	<div data-role="header">
+		<h1>Animal Quiz</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		
+		<form id="q5">
+			<fieldset data-role="controlgroup">
+				<legend>5. Do seals live in the Arctic or Antarctica?</legend>
+					<input type="radio" name="radio-choice" id="radio-choice-1" value="Arctic" />
+					<label for="radio-choice-1">Arctic</label>
+			
+					<input type="radio" name="radio-choice" id="radio-choice-2" value="Antarctica"  />
+					<label for="radio-choice-2">Antarctica</label>
+			</fieldset>
+		
+			
+		</form>
+		
+		<img src="images/seal.jpg" alt="seal" />
+		
+		<a href="#last" data-role="button" id="Arctic" class="check">Finish</a>
+		
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+<div data-role="page" id="last">
+
+	<div data-role="header">
+		<h1>Animal Quiz</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		
+		<div id="finalscore" style="text-align:center;"></div>
+		
+		<img src="images/herschel.jpg" alt="herschel" />
+		
+		<a href="#page1" data-role="button" class="check">Home</a>
+		
+	</div><!-- /content -->
+
+</div><!-- /page -->
+	
+
+</body>
+</html>
